@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pwnobd"
+version = "0.1.0"
+authors = [{ name = "Ignacio Gutiérrez Gómez", email = "nnubes256@gmail.com" }]
+description = "Offensive cybersecurity toolkit for vulnerability analysis and penetration testing of OBD-II devices."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console :: Curses",
+    "Topic :: Security",
+    "Topic :: Utilities",
+    "Natural Language :: English",
+    "Framework :: AsyncIO",
+]
+dependencies = [
+    "prompt_toolkit ~= 3.0.45",
+    "bleak ~= 0.22.2",
+    "pandas ~= 2.2",
+    "aiofiles ~= 23.2.1",
+    "typeguard ~= 4.3.0",
+    "pyshark ~= 0.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nnubes256/pwnobd"
+Repository = "https://github.com/Nnubes256/pwnobd.git"
+Issues = "https://github.com/Nnubes256/pwnobd/issues"
+
+[project.scripts]
+pwnobd = "pwnobd:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pwnobd"]
